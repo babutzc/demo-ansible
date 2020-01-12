@@ -1,3 +1,5 @@
 id_rsa
-id_rsa.pu
-.vagrant/
+id_rsa.pub
+authorized_keys
+.*
+
