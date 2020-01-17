@@ -1,0 +1,1 @@
+{"virtualbox":{"/home/vagrant/ansible":{"type":"virtualbox","guestpath":"/home/vagrant/ansible","hostpath":"/Users/mike/Documents/demo-ansible/data/ansible","disabled":false,"__vagrantfile":true},"/home/vagrant/gitlab":{"type":"virtualbox","guestpath":"/home/vagrant/gitlab","hostpath":"/Users/mike/Documents/demo-ansible/data/gitlab","disabled":false,"__vagrantfile":true}}}

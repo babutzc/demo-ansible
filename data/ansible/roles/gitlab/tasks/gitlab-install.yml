@@ -1,0 +1,8 @@
+
+--- 
+
+- name: Install Gitlab server
+  become: yes
+  yum: 
+    name: gitlab-ce 
+    state: latest

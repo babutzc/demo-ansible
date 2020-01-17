@@ -20,13 +20,9 @@ Vagrant.configure("2") do |config|
     ansible_config.vm.provision "file", source: "keys/id_rsa.pub", destination: "~/.ssh/authorized_keys"
     ansible_config.vm.provision "file", source: "keys/id_rsa", destination: "~/.ssh/id_rsa"
     ansible_config.vm.provision "file", source: "keys/id_rsa.pub", destination: "~/.ssh/id_rsa.pub"
-    ansible_config.vm.provision "file", source: "data/hosts/hosts", destination: "~/hosts"
-    ansible_config.vm.synced_folder "data/playbooks", "/home/vagrant/playbooks", type: "virtualbox"
+    ansible_config.vm.synced_folder "data/ansible", "/home/vagrant/ansible", type: "virtualbox"
     ansible_config.vm.synced_folder "data/gitlab", "/home/vagrant/gitlab", type: "virtualbox"
-    ansible_config.vm.provision "shell" do |s|
-      s.inline = "cp /home/vagrant/hosts /etc/ansible/hosts"
-      s.privileged = true
-      end 
+ 
   end
 
   config.vm.define :minion do |minion_config|

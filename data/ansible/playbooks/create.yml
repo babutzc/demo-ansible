@@ -1,0 +1,12 @@
+- name: Install gitlab
+  hosts: gitlab 
+  tasks:
+   - name: add the repo
+     include_role:
+       name: gitlab
+
+
+
+
+- name: manage gitlab config file
+ 

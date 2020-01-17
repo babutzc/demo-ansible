@@ -1,0 +1,23 @@
+---
+
+- name:  install dependencys
+  become: yes
+  yum: 
+    name: 
+        - policycoreutils-python 
+        - openssh-server
+
+
+
+- name: add gitlab repo 
+  become: yes
+  yum_repository:
+    name: gitlab
+    description: Gitlab-ce repo
+    file: external_repo
+    baseurl: https://packages.gitlab.com/gitlab/gitlab-ce/el/7/$basearch
+    metadata_expire: 300
+    gpgkey: 
+        - https://packages.gitlab.com/gitlab/gitlab-ce/gpgkey
+        - https://packages.gitlab.com/gitlab/gitlab-ce/gpgkey/gitlab-gitlab-ce-3D645A26AB9FBD22.pub.gpg
+    enabled: yes
