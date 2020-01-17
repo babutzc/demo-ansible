@@ -1,3 +1,5 @@
 version: 1 
 external_url: 192.168.50.11
-
+email_from: sro@dictu.nl
+email_display_name: SRO
+gitlab_email_reply_to: sro@dictu.nl

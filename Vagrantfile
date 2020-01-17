@@ -1,5 +1,5 @@
 Vagrant.configure("2") do |config|
-    centos_box = "centos/7"
+    centos_box = "bento/centos-7"
     net_ip = "192.168.50"
 
   config.vm.define :ansible, primary: true do |ansible_config|

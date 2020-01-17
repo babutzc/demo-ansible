@@ -7,8 +7,6 @@
         - policycoreutils-python 
         - openssh-server
 
-
-
 - name: add gitlab repo 
   become: yes
   yum_repository:
