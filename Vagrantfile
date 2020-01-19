@@ -6,7 +6,7 @@ Vagrant.configure("2") do |config|
     ansible_config.vm.provider "virtualbox" do |vb|
       vb.name = "ansible"
       vb.memory = "2048"
-      vb.cpus = 1
+      vb.cpus = 2
   
     end
 
@@ -21,15 +21,15 @@ Vagrant.configure("2") do |config|
     ansible_config.vm.provision "file", source: "keys/id_rsa", destination: "~/.ssh/id_rsa"
     ansible_config.vm.provision "file", source: "keys/id_rsa.pub", destination: "~/.ssh/id_rsa.pub"
     ansible_config.vm.synced_folder "data/ansible", "/home/vagrant/ansible", type: "virtualbox"
-    ansible_config.vm.synced_folder "data/gitlab", "/home/vagrant/gitlab", type: "virtualbox"
+   
  
   end
 
   config.vm.define :minion do |minion_config|
       minion_config.vm.provider "virtualbox" do |vb|
         vb.name = "minion"
-        vb.memory = "1048"
-        vb.cpus = 1
+        vb.memory = "2048"
+        vb.cpus = 2
       end
 
       minion_config.vm.box = "#{centos_box}"
@@ -38,9 +38,7 @@ Vagrant.configure("2") do |config|
       minion_config.vm.synced_folder ".", "/vagrant", disabled: true
       minion_config.ssh.insert_key = false
       minion_config.ssh.private_key_path = ["keys/id_rsa", "~/.vagrant.d/insecure_private_key"]
-      minion_config.vm.provision "file", source: "keys/id_rsa.pub", destination: "~/.ssh/authorized_keys"
-    
-      
+      minion_config.vm.provision "file", source: "keys/id_rsa.pub", destination: "~/.ssh/authorized_keys" 
   end
 
 end
