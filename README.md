@@ -1,8 +1,8 @@
 # demo-ansible
 
-This a demo showing the capabilities of Ansible. Using Vagrant two Virtualbox instance will be created with ansible installed on the 'master'. The 'minion' is configured so that the 'master' can access the 'minion. Through Ansible Gitlab will be installed with the correct eternal URL and a predefined root password. 
+This a demo showing the capabilities of Ansible. Using Vagrant two Virtualbox instance will be created with ansible installed on the 'master'. The 'minion' is configured so that the 'master' can access the 'minion. Through Ansible Gitlab will be installed with the correct external URL and a predefined root password. 
 
-Pleae note that it is bad practice to push the vault_pass file. As this is a demo and not running in production, i feel comfortable enough to push it along with everything.
+Please note that it is bad practice to push the vault_pass file. As this is a demo and not running in production, i feel comfortable enough to push it along with everything.
 
 ## Set-up 
 
